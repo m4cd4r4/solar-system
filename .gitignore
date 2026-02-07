@@ -39,6 +39,10 @@ build/
 coverage/
 .nyc_output/
 
+# E2E test artifacts
+test-screenshots/
+verify-screenshots/
+
 # Temporary files
 tmp/
 temp/
