@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solar System Vortex - Cosmos Collective</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #000;
+            color: #fff;
+            overflow: hidden;
+        }
+        .header {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            padding: 20px;
+            background: linear-gradient(180deg, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0) 100%);
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .header h1 {
+            font-size: 24px;
+            color: #6495ff;
+            text-shadow: 0 0 20px rgba(100, 150, 255, 0.5);
+        }
+        .back-link {
+            color: #6495ff;
+            text-decoration: none;
+            padding: 10px 20px;
+            border: 1px solid rgba(100, 150, 255, 0.5);
+            border-radius: 6px;
+            transition: all 0.3s;
+        }
+        .back-link:hover {
+            background: rgba(100, 150, 255, 0.2);
+            box-shadow: 0 0 20px rgba(100, 150, 255, 0.3);
+        }
+        iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        .loading {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 18px;
+            color: #6495ff;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>🌌 Solar System Vortex</h1>
+        <a href="#" class="back-link" onclick="history.back(); return false;">← Back to Cosmos Collective</a>
+    </div>
+    
+    <div class="loading" id="loading">Loading visualization...</div>
+    
+    <iframe 
+        src="solar_vortex.html" 
+        id="vortex-frame"
+        title="Solar System Vortex Visualization"
+        allowfullscreen
+        onload="document.getElementById('loading').style.display='none'">
+    </iframe>
+</body>
+</html>

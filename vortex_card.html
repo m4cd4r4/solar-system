@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solar Vortex Card - Cosmos Collective</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #0a0a19;
+            padding: 40px 20px;
+            min-height: 100vh;
+        }
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        .page-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        .page-header h1 {
+            font-size: 48px;
+            color: #6495ff;
+            margin-bottom: 10px;
+            text-shadow: 0 0 20px rgba(100, 150, 255, 0.5);
+        }
+        .page-header p {
+            color: #999;
+            font-size: 18px;
+        }
+        .vortex-card {
+            background: rgba(10, 10, 25, 0.8);
+            border: 1px solid rgba(100, 150, 255, 0.3);
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+            backdrop-filter: blur(10px);
+        }
+        .card-header {
+            padding: 20px;
+            background: linear-gradient(135deg, rgba(100, 149, 237, 0.2) 0%, rgba(138, 43, 226, 0.2) 100%);
+            border-bottom: 1px solid rgba(100, 150, 255, 0.3);
+        }
+        .card-header h2 {
+            color: #6495ff;
+            font-size: 28px;
+            margin-bottom: 8px;
+        }
+        .card-header p {
+            color: #aaa;
+            font-size: 14px;
+        }
+        .card-body {
+            position: relative;
+            height: 800px;
+            background: #000;
+        }
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        .fullscreen-btn {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: rgba(100, 150, 255, 0.2);
+            border: 1px solid rgba(100, 150, 255, 0.5);
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: all 0.3s;
+            z-index: 10;
+        }
+        .fullscreen-btn:hover {
+            background: rgba(100, 150, 255, 0.4);
+            box-shadow: 0 0 20px rgba(100, 150, 255, 0.3);
+        }
+        .info-section {
+            padding: 30px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            background: rgba(10, 10, 25, 0.6);
+            border-top: 1px solid rgba(100, 150, 255, 0.3);
+        }
+        .info-card {
+            padding: 20px;
+            background: rgba(100, 150, 255, 0.05);
+            border-radius: 8px;
+            border: 1px solid rgba(100, 150, 255, 0.2);
+        }
+        .info-card h3 {
+            color: #6495ff;
+            margin-bottom: 10px;
+            font-size: 18px;
+        }
+        .info-card p {
+            color: #aaa;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+        @media (max-width: 768px) {
+            .card-body {
+                height: 600px;
+            }
+            .page-header h1 {
+                font-size: 32px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="page-header">
+            <h1>🌌 Cosmos Collective</h1>
+            <p>Interactive Solar System Visualization</p>
+        </div>
+
+        <div class="vortex-card">
+            <div class="card-header">
+                <h2>⚡ Solar System Vortex</h2>
+                <p>Watch the planets trace helical paths as the sun moves through the galaxy</p>
+            </div>
+
+            <div class="card-body">
+                <button class="fullscreen-btn" onclick="toggleFullscreen()">⛶ Fullscreen</button>
+                <iframe 
+                    src="solar_vortex.html" 
+                    id="vortex-iframe"
+                    title="Solar System Vortex"
+                    allowfullscreen>
+                </iframe>
+            </div>
+
+            <div class="info-section">
+                <div class="info-card">
+                    <h3>🎮 Interactive Controls</h3>
+                    <p>Adjust sun speed, orbital speed, and time progression. Toggle planet labels, moons, and particle effects.</p>
+                </div>
+                <div class="info-card">
+                    <h3>🌍 Planetary Events</h3>
+                    <p>Track upcoming conjunctions and oppositions between planets with precise dates and angular separations.</p>
+                </div>
+                <div class="info-card">
+                    <h3>🌙 Moon Systems</h3>
+                    <p>Explore 16 moons orbiting their parent planets, from Earth's Moon to Jupiter's Galilean satellites.</p>
+                </div>
+                <div class="info-card">
+                    <h3>📊 Real-Time Stats</h3>
+                    <p>Monitor distance traveled, simulation time, current date, and camera position as the system evolves.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function toggleFullscreen() {
+            const iframe = document.getElementById('vortex-iframe');
+            if (iframe.requestFullscreen) {
+                iframe.requestFullscreen();
+            } else if (iframe.webkitRequestFullscreen) {
+                iframe.webkitRequestFullscreen();
+            } else if (iframe.msRequestFullscreen) {
+                iframe.msRequestFullscreen();
+            }
+        }
+    </script>
+</body>
+</html>
