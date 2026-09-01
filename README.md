@@ -2,6 +2,8 @@
 
 An interactive 3D visualization of the solar system showing planets orbiting the sun as it moves through space, creating beautiful helical vortex trails.
 
+**Live app:** https://cosmos-collective.com.au/solar-system
+
 ![Solar System Vortex](screenshot.png)
 
 ## Features
@@ -13,6 +15,10 @@ An interactive 3D visualization of the solar system showing planets orbiting the
 - **ACES filmic tone mapping** with multi-layer starfield
 - **Saturn's rings** with 5-band structure and Cassini division
 - **1,500 asteroid belt** particles between Mars and Jupiter
+- **Ceres and Pluto** as dwarf planets, shown with a dashed label to mark them apart from the eight
+
+### Welcome Tour
+First-time visitors get a prompt to take a guided demo tour or jump straight in; the choice is remembered per browser.
 
 ### Earth Dive
 Fly into low Earth orbit with smooth camera transitions:
@@ -21,9 +27,22 @@ Fly into low Earth orbit with smooth camera transitions:
 - HUD overlay with altitude display (km and Earth radii)
 - Press again to smoothly return to your previous view
 
+### Galaxy View
+Zoom all the way out to see the Sun's place in the Milky Way:
+- Toggle with the galaxy button or press **G**
+- Scroll or use **+ / -** to zoom, **0** to reset the view
+- Info panel gives location (Orion Arm), distance from the galactic centre, and orbital speed
+- A return button and a pulsing marker bring you back to the solar system
+
+### Planet Info Cards
+Click any planet label to open a card with its symbol, key stats (radius, mass, gravity, temperature, day length, tilt, atmosphere) and a fun fact, plus a one-click Dive button where supported.
+
+### Distance Mode
+Toggle **Distance** to pick two planet labels and measure the real separation between them, independent of the visualization's compressed scale.
+
 ### Follow Camera
 Track any celestial body with the Follow dropdown:
-- Sun (default), Mercury, Venus, Earth, Moon, Mars, Jupiter, Saturn, Uranus, Neptune
+- Sun (default), Mercury, Venus, Earth, Moon, Mars, Jupiter, Saturn, Uranus, Neptune, Ceres, Pluto
 - All camera modes (free, cinematic, orbital, side, chase) work with any follow target
 - "None" for fully free camera
 
@@ -34,6 +53,7 @@ Track any celestial body with the Follow dropdown:
 - **Trail Opacity** - Trail visibility (0.2-1.0)
 - **Time Speed** - Simulation speed (1-100 days/sec)
 - **5 Camera Modes** - Free, Cinematic, Orbital, Side View, Chase
+- **Display toggles** - Milky Way backdrop, reference grid, corona particles
 
 ### Planetary Events
 - Real-time **conjunction** and **opposition** tracking
@@ -62,6 +82,9 @@ Then open `http://localhost:8000/solar_vortex.html`
 | **Space** | Pause / Resume |
 | **R** | Reset camera view |
 | **E** | Dive to Earth / Return |
+| **G** | Toggle Galaxy View |
+| **+ / -** | Zoom in Galaxy View |
+| **0** | Reset Galaxy View zoom |
 | **Drag** | Rotate camera |
 | **Scroll** | Zoom in/out |
 | **Shift+Drag** | Pan camera |
@@ -77,7 +100,7 @@ Then open `http://localhost:8000/solar_vortex.html`
 ```
 solar-system/
 ├── solar_vortex.html       # Main visualization (standalone)
-├── textures/               # NASA 2K textures (16 files, ~8MB)
+├── textures/               # NASA 2K textures (17 files, ~8MB)
 ├── e2e-visual-test.js      # Playwright E2E test suite
 ├── verify-rewrite.js       # Verification test suite
 ├── vortex_embed.html       # Full-page wrapper
